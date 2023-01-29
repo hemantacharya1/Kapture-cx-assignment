@@ -16,11 +16,21 @@ import com.cx.kapture.service.CallDetailsService;
 @RestController
 @RequestMapping("/api")
 public class Controller {
+	
+	/*
+	 * Hello, to perform the analytics  first configure the mysql database configuration 
+	 * according to your local system in application.properties.
+	 * then to add the data use url 
+	 * localhost:8088/api/calldetails 
+	 * and add data according to dto class.
+	 * and you can call these api's to perform the analytics.
+	 * Thank you.
+	 */
 
 	@Autowired
 	private CallDetailsService callDetailsService;
 	
-	@PostMapping("/call")
+	@PostMapping("/calldetails")
 	public ResponseEntity<CallDetails> addData(@RequestBody CallDetailsDTO dto){
 		CallDetails data=callDetailsService.addCallData(dto);
 		
